@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jagdish Maliwad – Full-Stack Developer | MERN Stack | DevOps Enthusiast with 6+ years experience building 500+ websites"
+    />
+    <title>Jagdish Maliwad | Full-Stack Developer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Add your favicon here - replace favicon.ico with your actual photo -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .skill-bar {
+        transition: width 1s ease-in-out;
+      }
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-10">
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-xl font-bold text-blue-600">Jagdish Maliwad</a>
+        <div class="hidden md:flex space-x-8">
+          <a href="#about" class="hover:text-blue-600 transition">About</a>
+          <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+          <a href="#projects" class="hover:text-blue-600 transition"
+            >Projects</a
+          >
+          <a href="#experience" class="hover:text-blue-600 transition"
+            >Experience</a
+          >
+          <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white px-6 py-4 shadow-lg"
+      >
+        <a href="#about" class="block py-2 hover:text-blue-600">About</a>
+        <a href="#skills" class="block py-2 hover:text-blue-600">Skills</a>
+        <a href="#projects" class="block py-2 hover:text-blue-600">Projects</a>
+        <a href="#experience" class="block py-2 hover:text-blue-600"
+          >Experience</a
+        >
+        <a href="#contact" class="block py-2 hover:text-blue-600">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white pt-32 pb-24 text-center">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Jagdish Maliwad</h1>
+        <p class="text-xl md:text-2xl mb-8">
+          Full-Stack Developer | MERN Stack | DevOps Enthusiast
+        </p>
+        <p class="text-lg mb-10 max-w-2xl mx-auto">
+          Crafting scalable, high-performance web applications with 6+ years of
+          experience and 500+ successful live projects
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#projects"
+            class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-100 transition"
+            >View My Work</a
+          >
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"
+            >Let's Collaborate</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto py-20 px-6 fade-in">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="md:w-2/3">
+          <h2 class="text-3xl font-bold mb-6">About Me</h2>
+          <p class="leading-relaxed text-lg mb-4">
+            I'm <strong class="text-blue-600">Jagdish Maliwad</strong> — a
+            passionate Full-Stack Developer specializing in MERN Stack and
+            DevOps. With a background in Electrical Engineering (B.E., Indrashil
+            University) and 6+ years of web development experience, I've built
+            500+ websites and web apps for clients globally under my brand
+            <strong class="text-blue-600">MahisagarSoft</strong>.
+          </p>
+          <p class="leading-relaxed text-lg mb-4">
+            My expertise includes modern frontend development with React,
+            backend APIs in Node.js/Express, databases (MongoDB/MySQL), and
+            DevOps tools like Docker, AWS, and Azure. I focus on crafting
+            scalable, secure, and high-performance applications with clean,
+            maintainable code.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-6">
+            <div
+              class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium"
+            >
+              <i class="fas fa-check-circle mr-2"></i>500+ Live Projects
+            </div>
+            <div
+              class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium"
+            >
+              <i class="fas fa-check-circle mr-2"></i>6+ Years Experience
+            </div>
+            <div
+              class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium"
+            >
+              <i class="fas fa-check-circle mr-2"></i>Global Clientele
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/3 flex justify-center">
+          <div
+            class="bg-gradient-to-br from-blue-500 to-purple-600 w-64 h-64 rounded-full flex items-center justify-center text-white text-6xl shadow-xl"
+          >
+            JM
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white py-20 px-6">
+      <div class="max-w-5xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold mb-2 text-center">
+          Skills & Technologies
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          I've worked with a wide range of technologies in the web development
+          world, from front-end to back-end and DevOps.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Frontend -->
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-palette text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-semibold">Frontend</h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>HTML5, CSS3, JavaScript</span>
+                  <span>95%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-blue-600 rounded-full skill-bar"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>React, Next.js</span>
+                  <span>90%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-blue-600 rounded-full skill-bar"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Tailwind CSS, Bootstrap</span>
+                  <span>85%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-blue-600 rounded-full skill-bar"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="bg-green-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-server text-green-600 text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-semibold">Backend & APIs</h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Node.js, Express.js</span>
+                  <span>90%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-green-600 rounded-full skill-bar"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>REST APIs, GraphQL</span>
+                  <span>85%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-green-600 rounded-full skill-bar"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Authentication & Security</span>
+                  <span>88%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-green-600 rounded-full skill-bar"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-database text-purple-600 text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-semibold">Database</h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>MongoDB</span>
+                  <span>88%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-purple-600 rounded-full skill-bar"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>MySQL, PostgreSQL</span>
+                  <span>82%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-purple-600 rounded-full skill-bar"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Database Design & Optimization</span>
+                  <span>85%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-purple-600 rounded-full skill-bar"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps & Cloud -->
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="bg-orange-100 p-3 rounded-lg mr-4">
+                <i class="fas fa-cloud text-orange-600 text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-semibold">DevOps & Cloud</h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>AWS (EC2, S3, Lambda)</span>
+                  <span>85%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-orange-600 rounded-full skill-bar"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Microsoft Azure</span>
+                  <span>82%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-blue-500 rounded-full skill-bar"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Docker, Kubernetes</span>
+                  <span>83%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-orange-600 rounded-full skill-bar"
+                    style="width: 83%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>CI/CD, GitHub Actions</span>
+                  <span>81%</span>
+                </div>
+                <div class="h-2 bg-gray-200 rounded-full">
+                  <div
+                    class="h-2 bg-orange-600 rounded-full skill-bar"
+                    style="width: 81%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto py-20 px-6">
+      <h2 class="text-3xl font-bold mb-2 text-center">Live Projects</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Here are some of my recent live projects that showcase my skills and
+        expertise.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div
+          class="project-card bg-white rounded-xl overflow-hidden shadow-lg fade-in"
+        >
+          <div
+            class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center"
+          >
+            <i class="fas fa-calendar-check text-white text-6xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold">Booking Management System</h3>
+              <span
+                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                >Live</span
+              >
+            </div>
+            <p class="text-gray-600 mb-4">
+              A comprehensive platform for managing appointments, schedules, and
+              client workflows with real-time updates.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                >React</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                >Node.js</span
+              >
+              <span
+                class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                >MongoDB</span
+              >
+              <span
+                class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded"
+                >AWS</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-blue-600 font-medium inline-flex items-center"
+            >
+              View Live Project <i class="fas fa-external-link-alt ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="project-card bg-white rounded-xl overflow-hidden shadow-lg fade-in"
+        >
+          <div
+            class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center"
+          >
+            <i class="fas fa-shopping-cart text-white text-6xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold">E-Commerce Platform</h3>
+              <span
+                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                >Live</span
+              >
+            </div>
+            <p class="text-gray-600 mb-4">
+              A full-featured online store with payment integration, inventory
+              management, and admin dashboard.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                >Next.js</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                >Express</span
+              >
+              <span
+                class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                >MySQL</span
+              >
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded"
+                >Stripe</span
+              >
+              <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded"
+                >Azure</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-blue-600 font-medium inline-flex items-center"
+            >
+              View Live Project <i class="fas fa-external-link-alt ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="project-card bg-white rounded-xl overflow-hidden shadow-lg fade-in"
+        >
+          <div
+            class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center"
+          >
+            <i class="fas fa-chart-line text-white text-6xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold">Analytics Dashboard</h3>
+              <span
+                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium"
+                >Live</span
+              >
+            </div>
+            <p class="text-gray-600 mb-4">
+              A SaaS platform providing business intelligence with role-based
+              access and automated reporting.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                >React</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                >GraphQL</span
+              >
+              <span
+                class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded"
+                >PostgreSQL</span
+              >
+              <span
+                class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded"
+                >Docker</span
+              >
+              <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded"
+                >Kubernetes</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-blue-600 font-medium inline-flex items-center"
+            >
+              View Live Project <i class="fas fa-external-link-alt ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="#"
+          class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition inline-flex items-center"
+        >
+          <i class="fas fa-briefcase mr-2"></i> View All Live Projects
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-white py-20 px-6">
+      <div class="max-w-4xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold mb-2 text-center">
+          Education & Experience
+        </h2>
+        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          My journey in technology and web development.
+        </p>
+
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="absolute left-4 md:left-1/2 h-full w-1 bg-blue-200 transform -translate-x-1/2"
+          ></div>
+
+          <!-- Timeline items -->
+          <div class="space-y-12">
+            <!-- Item 1 -->
+            <div class="relative flex flex-col md:flex-row items-center">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                <h3 class="text-xl font-bold">Bachelor of Engineering</h3>
+                <p class="text-blue-600 font-medium">Electrical Engineering</p>
+                <p class="text-gray-600">Indrashil University, Gujarat</p>
+              </div>
+              <div
+                class="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2"
+              ></div>
+              <div class="md:w-1/2 md:pl-12">
+                <p class="text-gray-600">
+                  Foundation in problem-solving and analytical thinking that I
+                  apply to software development challenges.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="relative flex flex-col md:flex-row items-center">
+              <div
+                class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0 order-2 md:order-1"
+              >
+                <p class="text-gray-600">
+                  Started my journey in web development, building responsive
+                  websites and learning modern frameworks.
+                </p>
+              </div>
+              <div
+                class="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2"
+              ></div>
+              <div class="md:w-1/2 md:pl-12 order-1 md:order-2 mb-4 md:mb-0">
+                <h3 class="text-xl font-bold">Freelance Developer</h3>
+                <p class="text-blue-600 font-medium">Web Development</p>
+                <p class="text-gray-600">2018 - Present</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="relative flex flex-col md:flex-row items-center">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                <h3 class="text-xl font-bold">Founder / Lead Developer</h3>
+                <p class="text-blue-600 font-medium">MahisagarSoft</p>
+                <p class="text-gray-600">2020 - Present</p>
+              </div>
+              <div
+                class="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2"
+              ></div>
+              <div class="md:w-1/2 md:pl-12">
+                <p class="text-gray-600">
+                  Leading a team to deliver 500+ live projects globally,
+                  specializing in full-stack web applications deployed on AWS,
+                  Azure, and containerized environments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="gradient-bg text-white py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center fade-in">
+        <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
+        <p class="text-xl mb-10 max-w-2xl mx-auto">
+          I'm currently open for new full-stack development projects and
+          collaborations. Let's build something amazing together!
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+            <i class="fas fa-envelope text-3xl mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Email Me</h3>
+            <a
+              href="mailto:mahisagarsoft@gmail.com"
+              class="text-blue-200 hover:text-white transition"
+              >mahisagarsoft@gmail.com</a
+            >
+          </div>
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+            <i class="fas fa-globe text-3xl mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Visit My Website</h3>
+            <a
+              href="https://mahisagarsoft.com"
+              class="text-blue-200 hover:text-white transition"
+              >mahisagarsoft.com</a
+            >
+          </div>
+        </div>
+
+        <div class="flex justify-center space-x-6">
+          <a
+            href="https://linkedin.com/in/jagdishmaliwad-m-12349a24a"
+            class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition"
+          >
+            <i class="fab fa-linkedin-in text-xl"></i>
+          </a>
+          <a
+            href="https://github.com/yourusername"
+            class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition"
+          >
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a
+            href="https://twitter.com/yourusername"
+            class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition"
+          >
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-8 bg-gray-900 text-gray-400 text-sm">
+      <div class="max-w-4xl mx-auto px-6">
+        <p>© 2025 Jagdish Maliwad — All Rights Reserved.</p>
+        <p class="mt-2">
+          Crafted with <i class="fas fa-heart text-red-500"></i> and lots of
+          <i class="fas fa-coffee text-yellow-500"></i>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById('menu-toggle')
+        .addEventListener('click', function () {
+          const menu = document.getElementById('mobile-menu');
+          menu.classList.toggle('hidden');
+        });
+
+      // Scroll animation
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      fadeElements.forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Animate skill bars on scroll
+      const skillBars = document.querySelectorAll('.skill-bar');
+
+      const skillObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // The width is already set via inline style, so we just need to trigger the animation
+              entry.target.style.transition = 'width 1.5s ease-in-out';
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      skillBars.forEach((bar) => {
+        skillObserver.observe(bar);
+      });
+    </script>
+  </body>
+</html>
