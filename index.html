@@ -36,11 +36,11 @@
             color: var(--light);
             line-height: 1.6;
             min-height: 100vh;
-            padding-top: 80px; /* Space for fixed header */
+            padding-top: 70px; /* Space for fixed header */
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -51,16 +51,16 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(6, 15, 14, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(6, 15, 14, 0.98);
+            backdrop-filter: blur(15px);
             z-index: 1000;
             padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            border-bottom: 1px solid rgba(0, 255, 140, 0.2);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+            border-bottom: 1px solid rgba(0, 255, 140, 0.3);
         }
         
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
@@ -69,28 +69,46 @@
         }
         
         .nav-logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--darker);
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px var(--primary-glow);
         }
         
         .nav-menu {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
         
         .nav-link {
             color: var(--light);
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 8px 20px;
+            border-radius: 25px;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.95rem;
         }
         
         .nav-link:hover {
@@ -101,6 +119,7 @@
         .nav-link.active {
             background: rgba(0, 255, 140, 0.2);
             color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 255, 140, 0.3);
         }
         
         .nav-link.active::after {
@@ -117,29 +136,27 @@
         }
         
         /* ================= 3D GLASS SQUARE BUTTON STYLES ================= */
-        
-        /* Base Button Style */
         .glass-btn {
             position: relative;
-            min-width: 160px;
-            height: 70px;
-            border-radius: 14px;
+            min-width: 140px;
+            height: 55px;
+            border-radius: 12px;
             border: 1px solid rgba(0, 255, 140, 0.45);
             background: linear-gradient(145deg, rgba(0, 255, 140, 0.35), rgba(0, 180, 90, 0.18));
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             color: #ffffff;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             overflow: hidden;
             box-shadow:
-                0 0 28px rgba(0, 255, 140, 0.75),
-                0 18px 36px rgba(0, 0, 0, 0.75),
+                0 0 20px rgba(0, 255, 140, 0.6),
+                0 12px 25px rgba(0, 0, 0, 0.5),
                 inset 0 2px 3px rgba(255, 255, 255, 0.35),
-                inset 0 -8px 14px rgba(0, 0, 0, 0.45);
+                inset 0 -6px 10px rgba(0, 0, 0, 0.4);
             transition: all 0.25s ease;
-            padding: 0 30px;
+            padding: 0 20px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -148,14 +165,12 @@
             letter-spacing: 0.5px;
         }
         
-        /* Button Text */
         .glass-btn span {
             position: relative;
             z-index: 2;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
         
-        /* Top Glass Shine */
         .glass-btn::before {
             content: "";
             position: absolute;
@@ -165,31 +180,24 @@
             height: 40%;
             background: linear-gradient(to bottom, var(--glass-light), transparent);
             z-index: 1;
-            border-radius: 14px;
+            border-radius: 12px;
         }
         
-        /* Glow Aura */
         .glass-btn::after {
             content: "";
             position: absolute;
-            inset: -12px;
+            inset: -10px;
             background: radial-gradient(circle, rgba(0, 255, 140, 0.8), transparent 70%);
-            filter: blur(20px);
+            filter: blur(15px);
             z-index: 0;
-            border-radius: 26px;
+            border-radius: 22px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         
-        /* Button Variations */
         .glass-btn-primary {
             border-color: rgba(0, 255, 140, 0.45);
             background: linear-gradient(145deg, rgba(0, 255, 140, 0.35), rgba(0, 180, 90, 0.18));
-            box-shadow:
-                0 0 28px rgba(0, 255, 140, 0.75),
-                0 18px 36px var(--shadow),
-                inset 0 2px 3px var(--glass-light),
-                inset 0 -8px 14px var(--glass-dark);
         }
         
         .glass-btn-primary::after {
@@ -200,10 +208,10 @@
             border-color: rgba(108, 92, 231, 0.45);
             background: linear-gradient(145deg, rgba(108, 92, 231, 0.35), rgba(90, 79, 207, 0.18));
             box-shadow:
-                0 0 28px rgba(108, 92, 231, 0.75),
-                0 18px 36px var(--shadow),
-                inset 0 2px 3px var(--glass-light),
-                inset 0 -8px 14px var(--glass-dark);
+                0 0 20px rgba(108, 92, 231, 0.6),
+                0 12px 25px rgba(0, 0, 0, 0.5),
+                inset 0 2px 3px rgba(255, 255, 255, 0.35),
+                inset 0 -6px 10px rgba(0, 0, 0, 0.4);
         }
         
         .glass-btn-secondary::after {
@@ -214,24 +222,23 @@
             border-color: rgba(253, 121, 168, 0.45);
             background: linear-gradient(145deg, rgba(253, 121, 168, 0.35), rgba(232, 67, 147, 0.18));
             box-shadow:
-                0 0 28px rgba(253, 121, 168, 0.75),
-                0 18px 36px var(--shadow),
-                inset 0 2px 3px var(--glass-light),
-                inset 0 -8px 14px var(--glass-dark);
+                0 0 20px rgba(253, 121, 168, 0.6),
+                0 12px 25px rgba(0, 0, 0, 0.5),
+                inset 0 2px 3px rgba(255, 255, 255, 0.35),
+                inset 0 -6px 10px rgba(0, 0, 0, 0.4);
         }
         
         .glass-btn-accent::after {
             background: radial-gradient(circle, rgba(253, 121, 168, 0.8), transparent 70%);
         }
         
-        /* Hover Effect */
         .glass-btn:hover {
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-3px) scale(1.02);
             box-shadow:
-                0 0 45px var(--primary-glow),
-                0 26px 55px rgba(0, 0, 0, 0.85),
-                inset 0 2px 3px rgba(255, 255, 255, 0.45),
-                inset 0 -8px 16px rgba(0, 0, 0, 0.5);
+                0 0 30px var(--primary-glow),
+                0 18px 35px rgba(0, 0, 0, 0.6),
+                inset 0 2px 3px rgba(255, 255, 255, 0.4),
+                inset 0 -6px 12px rgba(0, 0, 0, 0.45);
         }
         
         .glass-btn:hover::after {
@@ -240,60 +247,18 @@
         
         .glass-btn-secondary:hover {
             box-shadow:
-                0 0 45px var(--secondary-glow),
-                0 26px 55px rgba(0, 0, 0, 0.85),
-                inset 0 2px 3px rgba(255, 255, 255, 0.45),
-                inset 0 -8px 16px rgba(0, 0, 0, 0.5);
+                0 0 30px var(--secondary-glow),
+                0 18px 35px rgba(0, 0, 0, 0.6),
+                inset 0 2px 3px rgba(255, 255, 255, 0.4),
+                inset 0 -6px 12px rgba(0, 0, 0, 0.45);
         }
         
         .glass-btn-accent:hover {
             box-shadow:
-                0 0 45px var(--accent-glow),
-                0 26px 55px rgba(0, 0, 0, 0.85),
-                inset 0 2px 3px rgba(255, 255, 255, 0.45),
-                inset 0 -8px 16px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Active/Pressed Effect */
-        .glass-btn:active {
-            transform: translateY(2px) scale(0.97);
-            box-shadow:
-                0 0 18px var(--primary-glow),
-                0 12px 24px rgba(0, 0, 0, 0.9),
-                inset 0 8px 16px rgba(0, 0, 0, 0.6);
-            animation: button-glow 0.5s ease;
-        }
-        
-        .glass-btn:active span {
-            transform: translateY(1px);
-            transition: transform 0.1s;
-            display: inline-block;
-        }
-        
-        .glass-btn-secondary:active {
-            box-shadow:
-                0 0 18px var(--secondary-glow),
-                0 12px 24px rgba(0, 0, 0, 0.9),
-                inset 0 8px 16px rgba(0, 0, 0, 0.6);
-        }
-        
-        .glass-btn-accent:active {
-            box-shadow:
-                0 0 18px var(--accent-glow),
-                0 12px 24px rgba(0, 0, 0, 0.9),
-                inset 0 8px 16px rgba(0, 0, 0, 0.6);
-        }
-        
-        @keyframes button-glow {
-            0% { box-shadow: 0 0 18px var(--primary-glow), 0 12px 24px rgba(0, 0, 0, 0.9), inset 0 8px 16px rgba(0, 0, 0, 0.6); }
-            50% { box-shadow: 0 0 30px var(--primary-glow), 0 12px 24px rgba(0, 0, 0, 0.9), inset 0 8px 16px rgba(0, 0, 0, 0.6); }
-            100% { box-shadow: 0 0 18px var(--primary-glow), 0 12px 24px rgba(0, 0, 0, 0.9), inset 0 8px 16px rgba(0, 0, 0, 0.6); }
-        }
-        
-        /* Focus State */
-        .glass-btn:focus {
-            outline: 2px solid rgba(0, 255, 140, 0.7);
-            outline-offset: 2px;
+                0 0 30px var(--accent-glow),
+                0 18px 35px rgba(0, 0, 0, 0.6),
+                inset 0 2px 3px rgba(255, 255, 255, 0.4),
+                inset 0 -6px 12px rgba(0, 0, 0, 0.45);
         }
         
         /* ================= HEADER STYLES ================= */
@@ -315,9 +280,9 @@
         /* 3D Profile Photo Circle */
         .profile-photo-container {
             position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto 40px;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 30px;
             transform-style: preserve-3d;
             perspective: 1000px;
         }
@@ -330,12 +295,12 @@
             transform-style: preserve-3d;
             transition: transform 0.5s ease;
             box-shadow:
-                0 0 0 15px rgba(0, 255, 140, 0.1),
-                0 0 60px var(--primary-glow),
-                0 0 120px rgba(0, 255, 140, 0.3),
-                inset 0 0 30px rgba(255, 255, 255, 0.2),
-                inset 0 8px 30px rgba(0, 0, 0, 0.4),
-                0 30px 60px rgba(0, 0, 0, 0.7);
+                0 0 0 12px rgba(0, 255, 140, 0.1),
+                0 0 50px var(--primary-glow),
+                0 0 100px rgba(0, 255, 140, 0.3),
+                inset 0 0 25px rgba(255, 255, 255, 0.2),
+                inset 0 6px 25px rgba(0, 0, 0, 0.4),
+                0 25px 50px rgba(0, 0, 0, 0.7);
             background: linear-gradient(145deg, 
                 rgba(0, 255, 140, 0.2), 
                 rgba(108, 92, 231, 0.2), 
@@ -358,17 +323,17 @@
         .profile-photo::before {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
             background: radial-gradient(circle at 30% 30%, 
                 rgba(0, 255, 140, 0.4) 0%, 
                 rgba(108, 92, 231, 0.2) 40%, 
                 transparent 70%);
             border-radius: 50%;
             z-index: 0;
-            filter: blur(20px);
+            filter: blur(15px);
         }
         
         .profile-photo::after {
@@ -399,61 +364,46 @@
         
         .photo-shadow {
             position: absolute;
-            bottom: -30px;
+            bottom: -25px;
             left: 50%;
             transform: translateX(-50%);
-            width: 180px;
-            height: 40px;
+            width: 150px;
+            height: 30px;
             background: radial-gradient(ellipse at center, 
                 rgba(0, 0, 0, 0.6) 0%, 
                 transparent 70%);
-            filter: blur(15px);
+            filter: blur(12px);
             z-index: -1;
         }
         
         .name-title {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 0 0 10px rgba(0, 255, 140, 0.5);
         }
         
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #dfe6e9;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-        
-        /* Main Navigation in Header */
-        .main-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin: 50px 0 30px;
-        }
-        
-        .nav-btn {
-            min-width: 140px;
-            height: 60px;
-            font-size: 0.9rem;
         }
         
         /* ================= SECTION STYLES ================= */
@@ -461,16 +411,16 @@
         section {
             background: rgba(6, 15, 14, 0.7);
             border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 50px;
+            padding: 35px;
+            margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(0, 255, 140, 0.1);
             backdrop-filter: blur(10px);
         }
         
         section h3 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin-bottom: 25px;
             color: var(--primary);
             position: relative;
             display: inline-block;
@@ -482,7 +432,7 @@
             position: absolute;
             bottom: -8px;
             left: 0;
-            width: 80px;
+            width: 70px;
             height: 4px;
             background: var(--primary);
             border-radius: 2px;
@@ -491,55 +441,57 @@
         
         section p {
             color: #b2bec3;
-            margin-bottom: 25px;
-            line-height: 1.8;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
         
         /* Stats Buttons */
         .stats-container {
             display: flex;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 15px;
+            margin-top: 25px;
             flex-wrap: wrap;
+            justify-content: center;
         }
         
         /* ================= SKILLS SECTION ================= */
         
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
         }
         
         .skill-category {
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             border: 1px solid rgba(0, 255, 140, 0.1);
             backdrop-filter: blur(5px);
         }
         
         .skill-category h4 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             color: var(--primary);
             text-shadow: 0 0 8px rgba(0, 255, 140, 0.3);
         }
         
         .skill-item {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .skill-info {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .skill-name {
             font-weight: 600;
             color: #fff;
+            font-size: 0.95rem;
         }
         
         .skill-percent {
@@ -550,95 +502,59 @@
         
         /* 3D Skill Bar */
         .skill-bar {
-            height: 20px;
+            height: 16px;
             background: rgba(0, 0, 0, 0.4);
-            border-radius: 12px;
+            border-radius: 10px;
             position: relative;
             overflow: hidden;
             box-shadow: 
-                inset 0 2px 8px rgba(0, 0, 0, 0.7),
-                0 4px 0 rgba(0, 0, 0, 0.4);
+                inset 0 2px 6px rgba(0, 0, 0, 0.7),
+                0 3px 0 rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(0, 255, 140, 0.2);
         }
         
         .skill-progress {
             height: 100%;
-            border-radius: 12px;
+            border-radius: 10px;
             position: relative;
             transition: width 1.5s ease-in-out;
             box-shadow: 
-                inset 0 2px 5px rgba(255, 255, 255, 0.5),
-                0 0 20px var(--primary-glow);
-        }
-        
-        /* Different colors for skill categories */
-        .frontend .skill-progress {
-            background: linear-gradient(90deg, #00ff8c, #00b45a);
-        }
-        
-        .backend .skill-progress {
-            background: linear-gradient(90deg, #6c5ce7, #5a4fcf);
-        }
-        
-        .database .skill-progress {
-            background: linear-gradient(90deg, #fd79a8, #e84393);
-        }
-        
-        .devops .skill-progress {
-            background: linear-gradient(90deg, #fdcb6e, #f9a825);
-        }
-        
-        .skill-progress:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.6), 
-                transparent);
-            border-radius: 12px;
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+                inset 0 2px 4px rgba(255, 255, 255, 0.5),
+                0 0 15px var(--primary-glow);
         }
         
         /* ================= PROJECTS SECTION ================= */
         
         .projects-section {
-            margin-top: 40px;
+            margin-top: 35px;
         }
         
         .projects-category {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
         
         .category-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding-left: 15px;
             border-left: 5px solid var(--primary);
             text-shadow: 0 0 15px rgba(0, 255, 140, 0.5);
         }
         
-        /* Horizontal Scrolling Projects Container */
-        .projects-scroll-container {
+        /* Projects Container - Show 3-4 projects at once */
+        .projects-container {
             position: relative;
             overflow: hidden;
-            padding: 20px 0;
+            padding: 15px 0 25px;
         }
         
         .projects-track {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             animation: scroll-left 40s linear infinite;
-            padding: 10px;
+            padding: 10px 5px;
+            width: max-content;
         }
         
         .projects-track:hover {
@@ -647,32 +563,35 @@
         
         @keyframes scroll-left {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(calc(-320px * 5 - 20px * 5)); }
         }
         
         .project-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            padding: 25px;
+            border-radius: 15px;
+            padding: 20px;
             border: 1px solid rgba(0, 255, 140, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             backdrop-filter: blur(5px);
-            min-width: 350px;
+            width: 300px;
             flex-shrink: 0;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             border-color: rgba(0, 255, 140, 0.3);
         }
         
         .project-image {
             width: 100%;
-            height: 200px;
-            border-radius: 12px;
+            height: 160px;
+            border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             position: relative;
         }
         
@@ -688,44 +607,81 @@
         }
         
         .project-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--primary);
             text-shadow: 0 0 8px rgba(0, 255, 140, 0.3);
         }
         
         .project-card p {
             color: #b2bec3;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            flex-grow: 1;
         }
         
         .project-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: auto;
         }
         
         .project-links .glass-btn {
-            min-width: 120px;
-            height: 50px;
-            font-size: 0.9rem;
+            min-width: 110px;
+            height: 45px;
+            font-size: 0.85rem;
+            flex: 1;
         }
         
-        /* Scrollbar for project containers */
-        .projects-scroll-container::-webkit-scrollbar {
-            height: 8px;
+        /* Category Indicators */
+        .category-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
         }
         
-        .projects-scroll-container::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
+        .category-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        .projects-scroll-container::-webkit-scrollbar-thumb {
+        .category-indicator.active {
             background: var(--primary);
-            border-radius: 4px;
+            box-shadow: 0 0 10px var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Scroll controls */
+        .scroll-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .scroll-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 255, 140, 0.1);
+            border: 1px solid rgba(0, 255, 140, 0.3);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-btn:hover {
+            background: rgba(0, 255, 140, 0.2);
+            transform: scale(1.1);
         }
         
         /* ================= EXPERIENCE SECTION ================= */
@@ -733,7 +689,7 @@
         .timeline {
             position: relative;
             max-width: 800px;
-            margin: 40px auto 0;
+            margin: 35px auto 0;
         }
         
         .timeline:before {
@@ -750,37 +706,37 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
-            padding-left: 70px;
+            margin-bottom: 35px;
+            padding-left: 65px;
         }
         
         .timeline-date {
             position: absolute;
             left: 0;
             top: 0;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background: linear-gradient(145deg, rgba(0, 255, 140, 0.35), rgba(0, 180, 90, 0.18));
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 600;
             box-shadow:
-                0 0 28px rgba(0, 255, 140, 0.5),
-                0 10px 20px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(0, 255, 140, 0.5),
+                0 8px 15px rgba(0, 0, 0, 0.5),
                 inset 0 2px 3px rgba(255, 255, 255, 0.35),
-                inset 0 -8px 14px rgba(0, 0, 0, 0.45);
+                inset 0 -6px 10px rgba(0, 0, 0, 0.45);
             border: 1px solid rgba(0, 255, 140, 0.3);
             backdrop-filter: blur(5px);
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .timeline-content h4 {
             color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
         
         /* ================= CONTACT SECTION ================= */
@@ -789,8 +745,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 35px;
         }
         
         .contact-item {
@@ -798,24 +754,24 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 220px;
+            width: 200px;
         }
         
         .contact-icon {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             background: linear-gradient(145deg, rgba(0, 255, 140, 0.35), rgba(0, 180, 90, 0.18));
-            border-radius: 18px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-size: 2rem;
             box-shadow:
-                0 0 28px rgba(0, 255, 140, 0.5),
-                0 15px 30px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(0, 255, 140, 0.5),
+                0 12px 25px rgba(0, 0, 0, 0.5),
                 inset 0 2px 3px rgba(255, 255, 255, 0.35),
-                inset 0 -8px 14px rgba(0, 0, 0, 0.45);
+                inset 0 -6px 10px rgba(0, 0, 0, 0.45);
             border: 1px solid rgba(0, 255, 140, 0.3);
             backdrop-filter: blur(5px);
             color: white;
@@ -827,43 +783,45 @@
         }
         
         .contact-item h4 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--primary);
+            font-size: 1.1rem;
         }
         
         .contact-item p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #b2bec3;
+            font-size: 0.9rem;
         }
         
         /* ================= FOOTER ================= */
         
         footer {
             text-align: center;
-            padding: 50px 0;
-            margin-top: 50px;
+            padding: 40px 0;
+            margin-top: 40px;
             border-top: 1px solid rgba(0, 255, 140, 0.1);
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin: 30px 0;
+            gap: 20px;
+            margin: 25px 0;
             flex-wrap: wrap;
         }
         
         .copyright {
             color: #636e72;
-            font-size: 0.9rem;
-            margin-top: 30px;
+            font-size: 0.85rem;
+            margin-top: 25px;
         }
         
         /* ================= RESPONSIVE DESIGN ================= */
         
         @media (max-width: 768px) {
             body {
-                padding-top: 70px;
+                padding-top: 60px;
             }
             
             .fixed-nav {
@@ -871,59 +829,63 @@
             }
             
             .nav-container {
-                flex-direction: column;
-                gap: 15px;
+                padding: 0 15px;
             }
             
             .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 8px;
             }
             
             .nav-link {
                 padding: 6px 12px;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+            }
+            
+            .logo-circle {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
             
             .profile-photo-container {
-                width: 220px;
-                height: 220px;
-            }
-            
-            .main-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-btn {
                 width: 200px;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
+                height: 200px;
             }
             
             section {
                 padding: 25px;
             }
             
+            section h3 {
+                font-size: 1.7rem;
+            }
+            
             .glass-btn {
-                min-width: 140px;
-                height: 60px;
-                font-size: 16px;
-                padding: 0 20px;
+                min-width: 120px;
+                height: 50px;
+                font-size: 14px;
+                padding: 0 15px;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                width: 280px;
+                height: 360px;
+            }
+            
+            .project-image {
+                height: 140px;
             }
             
             .contact-info {
@@ -933,25 +895,22 @@
             
             .contact-item {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
             }
             
-            .project-card {
-                min-width: 280px;
-            }
-            
-            .projects-track {
-                animation: scroll-left 20s linear infinite;
+            @keyframes scroll-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-280px * 5 - 20px * 5)); }
             }
         }
         
         @media (max-width: 480px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .profile-photo-container {
@@ -959,8 +918,22 @@
                 height: 180px;
             }
             
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
             .project-card {
-                min-width: 250px;
+                width: 260px;
+                height: 340px;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .project-links .glass-btn {
+                width: 100%;
             }
         }
     </style>
@@ -969,7 +942,10 @@
     <!-- Fixed Navigation Bar -->
     <nav class="fixed-nav">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">JM</a>
+            <a href="#home" class="nav-logo">
+                <div class="logo-circle">JM</div>
+                <span>Jagdish Maliwad</span>
+            </a>
             <div class="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#skills" class="nav-link">Skills</a>
@@ -986,7 +962,7 @@
                 <!-- 3D Profile Photo -->
                 <div class="profile-photo-container">
                     <div class="profile-photo">
-                        <img src="images/jagdishmaliwad.jpeg" alt="Jagdish Maliwad">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Jagdish Maliwad">
                     </div>
                     <div class="photo-shadow"></div>
                 </div>
@@ -995,21 +971,6 @@
                     <h1>Jagdish Maliwad</h1>
                     <h2>Full Stack Developer | MERN Stack | DevOps Engineer</h2>
                     <p class="tagline">Specializing in creating scalable, secure, and high-performance applications with clean, sustainable code.</p>
-                </div>
-                
-                <div class="main-nav">
-                    <a href="#skills" class="glass-btn glass-btn-primary nav-btn">
-                        <span>Skills</span>
-                    </a>
-                    <a href="#projects" class="glass-btn glass-btn-secondary nav-btn">
-                        <span>Projects</span>
-                    </a>
-                    <a href="#experience" class="glass-btn glass-btn-accent nav-btn">
-                        <span>Experience</span>
-                    </a>
-                    <a href="#contact" class="glass-btn glass-btn-primary nav-btn">
-                        <span>Contact</span>
-                    </a>
                 </div>
             </div>
         </header>
@@ -1024,7 +985,7 @@
                     <span>5+ Years Experience</span>
                 </div>
                 <div class="glass-btn glass-btn-secondary">
-                    <span>100+ Projects Completed</span>
+                    <span>100+ Projects</span>
                 </div>
                 <div class="glass-btn glass-btn-accent">
                     <span>50+ Global Clients</span>
@@ -1045,7 +1006,7 @@
                             <span class="skill-percent">95%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="95"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #00ff8c, #00b45a); width: 95%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1054,7 +1015,7 @@
                             <span class="skill-percent">92%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="92"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #00ff8c, #00b45a); width: 92%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1063,7 +1024,7 @@
                             <span class="skill-percent">90%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="90"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #00ff8c, #00b45a); width: 90%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1072,7 +1033,7 @@
                             <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="85"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #00ff8c, #00b45a); width: 85%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1085,7 +1046,7 @@
                             <span class="skill-percent">90%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="90"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #6c5ce7, #5a4fcf); width: 90%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1094,7 +1055,7 @@
                             <span class="skill-percent">88%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="88"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #6c5ce7, #5a4fcf); width: 88%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1103,16 +1064,16 @@
                             <span class="skill-percent">93%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="93"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #6c5ce7, #5a4fcf); width: 93%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">Authentication & Security</span>
+                            <span class="skill-name">Authentication</span>
                             <span class="skill-percent">87%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="87"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #6c5ce7, #5a4fcf); width: 87%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1125,7 +1086,7 @@
                             <span class="skill-percent">91%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="91"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fd79a8, #e84393); width: 91%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1134,7 +1095,7 @@
                             <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="85"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fd79a8, #e84393); width: 85%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1143,7 +1104,7 @@
                             <span class="skill-percent">82%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="82"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fd79a8, #e84393); width: 82%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1152,7 +1113,7 @@
                             <span class="skill-percent">89%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="89"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fd79a8, #e84393); width: 89%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1165,7 +1126,7 @@
                             <span class="skill-percent">83%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="83"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fdcb6e, #f9a825); width: 83%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1174,7 +1135,7 @@
                             <span class="skill-percent">86%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="86"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fdcb6e, #f9a825); width: 86%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1183,7 +1144,7 @@
                             <span class="skill-percent">80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="80"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fdcb6e, #f9a825); width: 80%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1192,7 +1153,7 @@
                             <span class="skill-percent">95%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="95"></div>
+                            <div class="skill-progress" style="background: linear-gradient(90deg, #fdcb6e, #f9a825); width: 95%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1207,123 +1168,91 @@
                 <!-- Live Projects Category -->
                 <div class="projects-category">
                     <h4 class="category-title">Live Projects</h4>
-                    <div class="projects-scroll-container">
+                    <div class="projects-container">
                         <div class="projects-track">
-                            <!-- Project 1 -->
+                            <!-- 5 Live Projects -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="TaskMaster Pro">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="TaskMaster Pro">
                                 </div>
                                 <h4>TaskMaster Pro</h4>
                                 <p>A comprehensive project management tool with real-time collaboration, task tracking, and team communication features.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 2 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Finance Dashboard">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Finance Dashboard">
                                 </div>
                                 <h4>Finance Dashboard</h4>
                                 <p>Real-time financial analytics dashboard with interactive charts, expense tracking, and predictive budgeting tools.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 3 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="HealthTrack">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="HealthTrack">
                                 </div>
                                 <h4>HealthTrack</h4>
                                 <p>Healthcare management system for tracking patient records, appointments, and medical inventory with HIPAA compliance.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 4 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="CodeCollab">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CodeCollab">
                                 </div>
                                 <h4>CodeCollab</h4>
                                 <p>Real-time collaborative code editor with syntax highlighting, video conferencing, and version control integration.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 5 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="EventFlow">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="EventFlow">
                                 </div>
                                 <h4>EventFlow</h4>
                                 <p>Event management platform with ticketing, scheduling, and attendee engagement features for conferences and workshops.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Duplicate projects for seamless scrolling -->
+                            <!-- Duplicate for seamless scrolling -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="TaskMaster Pro">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="TaskMaster Pro">
                                 </div>
                                 <h4>TaskMaster Pro</h4>
                                 <p>A comprehensive project management tool with real-time collaboration, task tracking, and team communication features.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Finance Dashboard">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Finance Dashboard">
                                 </div>
                                 <h4>Finance Dashboard</h4>
                                 <p>Real-time financial analytics dashboard with interactive charts, expense tracking, and predictive budgeting tools.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -1333,107 +1262,79 @@
                 <!-- Business Websites Category -->
                 <div class="projects-category">
                     <h4 class="category-title">Business Websites</h4>
-                    <div class="projects-scroll-container">
+                    <div class="projects-container">
                         <div class="projects-track">
-                            <!-- Project 1 -->
+                            <!-- 5 Business Projects -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Corporate Solutions">
+                                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Corporate Solutions">
                                 </div>
                                 <h4>Corporate Solutions</h4>
                                 <p>Professional business website with services showcase, team profiles, client testimonials, and lead generation forms.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 2 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="TechStart Inc">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="TechStart Inc">
                                 </div>
                                 <h4>TechStart Inc</h4>
                                 <p>Startup business website with product demos, investor information, blog integration, and newsletter subscription.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 3 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="LegalEdge Partners">
+                                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="LegalEdge Partners">
                                 </div>
                                 <h4>LegalEdge Partners</h4>
                                 <p>Law firm website with case studies, attorney profiles, consultation booking system, and legal resource library.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 4 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="DesignHub Studio">
+                                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="DesignHub Studio">
                                 </div>
                                 <h4>DesignHub Studio</h4>
                                 <p>Creative agency portfolio with project galleries, client reviews, service packages, and interactive design showcases.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 5 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="ConsultPro Advisors">
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="ConsultPro Advisors">
                                 </div>
                                 <h4>ConsultPro Advisors</h4>
                                 <p>Consulting firm website with expertise areas, case studies, thought leadership content, and webinar registration.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Duplicate projects for seamless scrolling -->
+                            <!-- Duplicate for seamless scrolling -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Corporate Solutions">
+                                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Corporate Solutions">
                                 </div>
                                 <h4>Corporate Solutions</h4>
                                 <p>Professional business website with services showcase, team profiles, client testimonials, and lead generation forms.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -1443,107 +1344,79 @@
                 <!-- E-commerce Websites Category -->
                 <div class="projects-category">
                     <h4 class="category-title">E-commerce Websites</h4>
-                    <div class="projects-scroll-container">
+                    <div class="projects-container">
                         <div class="projects-track">
-                            <!-- Project 1 -->
+                            <!-- 5 E-commerce Projects -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="StyleHub Fashion">
+                                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="StyleHub Fashion">
                                 </div>
                                 <h4>StyleHub Fashion</h4>
                                 <p>Fashion e-commerce platform with advanced filtering, size guides, wishlist, and secure payment gateway integration.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 2 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="TechGadget Store">
+                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="TechGadget Store">
                                 </div>
                                 <h4>TechGadget Store</h4>
                                 <p>Electronics e-commerce with product comparisons, review system, tech specs comparison, and warranty management.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 3 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="HomeEssentials Mart">
+                                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="HomeEssentials Mart">
                                 </div>
                                 <h4>HomeEssentials Mart</h4>
                                 <p>Home goods marketplace with room visualization, product bundles, subscription services, and delivery scheduling.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 4 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="BookWorm Paradise">
+                                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="BookWorm Paradise">
                                 </div>
                                 <h4>BookWorm Paradise</h4>
                                 <p>Online bookstore with reading samples, author interviews, book clubs, and personalized recommendation engine.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 5 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1595435934247-5d33b7eacb44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="FitLife Sports">
+                                    <img src="https://images.unsplash.com/photo-1595435934247-5d33b7eacb44?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="FitLife Sports">
                                 </div>
                                 <h4>FitLife Sports</h4>
                                 <p>Sports equipment store with workout guides, size calculators, equipment compatibility check, and loyalty program.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Duplicate projects for seamless scrolling -->
+                            <!-- Duplicate for seamless scrolling -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="StyleHub Fashion">
+                                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="StyleHub Fashion">
                                 </div>
                                 <h4>StyleHub Fashion</h4>
                                 <p>Fashion e-commerce platform with advanced filtering, size guides, wishlist, and secure payment gateway integration.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -1553,107 +1426,79 @@
                 <!-- Software Websites Category -->
                 <div class="projects-category">
                     <h4 class="category-title">Software Websites</h4>
-                    <div class="projects-scroll-container">
+                    <div class="projects-container">
                         <div class="projects-track">
-                            <!-- Project 1 -->
+                            <!-- 5 Software Projects -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="DevTools Pro">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="DevTools Pro">
                                 </div>
                                 <h4>DevTools Pro</h4>
                                 <p>Developer tools platform with code formatters, validators, API testing, and collaborative development environment.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 2 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="CloudSync Manager">
+                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CloudSync Manager">
                                 </div>
                                 <h4>CloudSync Manager</h4>
                                 <p>Cloud storage management software with file synchronization, sharing controls, version history, and team collaboration.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 3 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="SecureVault System">
+                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SecureVault System">
                                 </div>
                                 <h4>SecureVault System</h4>
                                 <p>Enterprise security software with encryption, access controls, audit trails, and compliance reporting features.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 4 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="DataAnalytics Suite">
+                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="DataAnalytics Suite">
                                 </div>
                                 <h4>DataAnalytics Suite</h4>
                                 <p>Business intelligence software with data visualization, predictive analytics, reporting dashboards, and KPI tracking.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 5 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Workflow Automator">
+                                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Workflow Automator">
                                 </div>
                                 <h4>Workflow Automator</h4>
                                 <p>Process automation software with drag-and-drop workflow builder, integration connectors, and performance analytics.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Duplicate projects for seamless scrolling -->
+                            <!-- Duplicate for seamless scrolling -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="DevTools Pro">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="DevTools Pro">
                                 </div>
                                 <h4>DevTools Pro</h4>
                                 <p>Developer tools platform with code formatters, validators, API testing, and collaborative development environment.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -1663,107 +1508,79 @@
                 <!-- Portfolio Websites Category -->
                 <div class="projects-category">
                     <h4 class="category-title">Portfolio Websites</h4>
-                    <div class="projects-scroll-container">
+                    <div class="projects-container">
                         <div class="projects-track">
-                            <!-- Project 1 -->
+                            <!-- 5 Portfolio Projects -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="CreativeCanvas">
+                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CreativeCanvas">
                                 </div>
                                 <h4>CreativeCanvas</h4>
                                 <p>Artist portfolio with gallery showcase, project timelines, exhibition schedule, and art commission request system.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 2 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Photography Pro">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Photography Pro">
                                 </div>
                                 <h4>Photography Pro</h4>
                                 <p>Photographer portfolio with image galleries, client testimonials, booking system, and print ordering functionality.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 3 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Architectural Vision">
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Architectural Vision">
                                 </div>
                                 <h4>Architectural Vision</h4>
                                 <p>Architecture portfolio with 3D project visualizations, design process documentation, and client collaboration tools.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 4 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Music Maestro">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Music Maestro">
                                 </div>
                                 <h4>Music Maestro</h4>
                                 <p>Musician portfolio with audio samples, video performances, event calendar, and merchandise store integration.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Project 5 -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Design Portfolio">
+                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Design Portfolio">
                                 </div>
                                 <h4>Design Portfolio</h4>
                                 <p>UX/UI designer portfolio with case studies, design process documentation, and interactive prototype demos.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                             
-                            <!-- Duplicate projects for seamless scrolling -->
+                            <!-- Duplicate for seamless scrolling -->
                             <div class="project-card">
                                 <div class="project-image">
-                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="CreativeCanvas">
+                                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CreativeCanvas">
                                 </div>
                                 <h4>CreativeCanvas</h4>
                                 <p>Artist portfolio with gallery showcase, project timelines, exhibition schedule, and art commission request system.</p>
                                 <div class="project-links">
-                                    <a href="#" class="glass-btn glass-btn-primary">
-                                        <span>Live Demo</span>
-                                    </a>
-                                    <a href="#" class="glass-btn glass-btn-secondary">
-                                        <span>GitHub</span>
-                                    </a>
+                                    <a href="#" class="glass-btn glass-btn-primary">Live Demo</a>
+                                    <a href="#" class="glass-btn glass-btn-secondary">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -1871,19 +1688,8 @@
     </div>
 
     <script>
-        // Animate skill bars on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            // Set initial width for skill bars
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = '0%';
-                
-                // Animate after a short delay
-                setTimeout(() => {
-                    bar.style.width = width + '%';
-                }, 300);
-            });
+            // Remove header buttons functionality - already removed from HTML
             
             // Add click sound effect to all glass buttons
             const glassButtons = document.querySelectorAll('.glass-btn');
@@ -1948,7 +1754,7 @@
                         this.classList.add('active');
                         
                         window.scrollTo({
-                            top: targetElement.offsetTop - 100,
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                     }
@@ -1963,7 +1769,7 @@
                 let currentSection = '';
                 
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 150;
+                    const sectionTop = section.offsetTop - 120;
                     const sectionHeight = section.clientHeight;
                     if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                         currentSection = section.getAttribute('id');
@@ -1998,36 +1804,78 @@
             `;
             document.head.appendChild(style);
             
-            // Duplicate project cards for infinite scrolling effect
+            // Optimized project scrolling with 3-4 projects visible
+            function setupProjectScrolling() {
+                const projectTracks = document.querySelectorAll('.projects-track');
+                
+                projectTracks.forEach(track => {
+                    // Duplicate projects for seamless scrolling
+                    const originalProjects = track.innerHTML;
+                    track.innerHTML = originalProjects + originalProjects;
+                    
+                    // Calculate animation duration based on number of projects
+                    const projectCount = track.querySelectorAll('.project-card').length / 2;
+                    const totalWidth = (300 * projectCount) + (20 * (projectCount - 1));
+                    
+                    // Create dynamic animation
+                    const animationName = `scroll-${Math.random().toString(36).substr(2, 9)}`;
+                    
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes ${animationName} {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-${totalWidth}px); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    track.style.animation = `${animationName} ${40 + projectCount * 2}s linear infinite`;
+                });
+            }
+            
+            setupProjectScrolling();
+            
+            // Pause animation on hover
             const projectTracks = document.querySelectorAll('.projects-track');
             projectTracks.forEach(track => {
-                const originalCards = track.innerHTML;
-                track.innerHTML = originalCards + originalCards;
+                track.addEventListener('mouseenter', () => {
+                    track.style.animationPlayState = 'paused';
+                });
+                
+                track.addEventListener('mouseleave', () => {
+                    track.style.animationPlayState = 'running';
+                });
             });
+            
+            // Initialize skill bars animation
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                // Already set in HTML with inline styles
+                bar.style.transition = 'width 1.5s ease-in-out';
+            });
+            
+            // Animate skill bars when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        const skillBars = entry.target.querySelectorAll('.skill-progress');
+                        skillBars.forEach(bar => {
+                            // Trigger reflow to restart animation
+                            bar.style.width = '0%';
+                            setTimeout(() => {
+                                const width = bar.style.width || getComputedStyle(bar).width;
+                                bar.style.width = width;
+                            }, 10);
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            const skillsSection = document.getElementById('skills');
+            if(skillsSection) {
+                observer.observe(skillsSection);
+            }
         });
-        
-        // Animate skill bars when they come into view
-        const observerOptions = {
-            threshold: 0.3
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        bar.style.width = width + '%';
-                    });
-                }
-            });
-        }, observerOptions);
-        
-        // Observe skills section
-        const skillsSection = document.getElementById('skills');
-        if(skillsSection) {
-            observer.observe(skillsSection);
-        }
     </script>
 </body>
 </html>
