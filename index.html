@@ -500,13 +500,13 @@
             text-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
         }
         
-        /* 3D Skill Bar */
+        /* 3D Skill Bar - FIXED TO BE VISIBLE */
         .skill-bar {
             height: 16px;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 10px;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 
                 inset 0 2px 6px rgba(0, 0, 0, 0.7),
                 0 3px 0 rgba(0, 0, 0, 0.4);
@@ -521,6 +521,7 @@
             box-shadow: 
                 inset 0 2px 4px rgba(255, 255, 255, 0.5),
                 0 0 15px var(--primary-glow);
+            min-width: 8px; /* Ensure it's visible even at 0% */
         }
         
         /* ================= PROJECTS SECTION ================= */
@@ -819,6 +820,36 @@
         
         /* ================= RESPONSIVE DESIGN ================= */
         
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+                padding: 15px;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .skill-category {
+                padding: 20px;
+            }
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding-top: 60px;
@@ -830,15 +861,20 @@
             
             .nav-container {
                 padding: 0 15px;
+                flex-direction: column;
+                gap: 10px;
             }
             
             .nav-menu {
-                gap: 8px;
+                width: 100%;
+                justify-content: center;
+                gap: 5px;
             }
             
             .nav-link {
                 padding: 6px 12px;
                 font-size: 0.85rem;
+                white-space: nowrap;
             }
             
             .logo-circle {
@@ -861,7 +897,8 @@
             }
             
             section {
-                padding: 25px;
+                padding: 25px 20px;
+                margin-bottom: 30px;
             }
             
             section h3 {
@@ -879,6 +916,14 @@
                 grid-template-columns: 1fr;
             }
             
+            .skill-category {
+                padding: 20px;
+            }
+            
+            .skill-bar {
+                height: 14px;
+            }
+            
             .project-card {
                 width: 280px;
                 height: 360px;
@@ -891,11 +936,22 @@
             .contact-info {
                 flex-direction: column;
                 align-items: center;
+                gap: 25px;
             }
             
             .contact-item {
                 width: 100%;
                 max-width: 280px;
+            }
+            
+            .stats-container {
+                gap: 10px;
+            }
+            
+            .stats-container .glass-btn {
+                min-width: 110px;
+                height: 45px;
+                font-size: 13px;
             }
             
             @keyframes scroll-left {
@@ -904,7 +960,7 @@
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             h1 {
                 font-size: 1.8rem;
             }
@@ -921,6 +977,20 @@
             .nav-menu {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 8px;
+            }
+            
+            .nav-link {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+            
+            section {
+                padding: 20px 15px;
+            }
+            
+            section h3 {
+                font-size: 1.5rem;
             }
             
             .project-card {
@@ -928,12 +998,162 @@
                 height: 340px;
             }
             
+            .project-image {
+                height: 130px;
+            }
+            
             .project-links {
                 flex-direction: column;
+                gap: 10px;
             }
             
             .project-links .glass-btn {
                 width: 100%;
+                height: 40px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats-container .glass-btn {
+                width: 200px;
+            }
+            
+            .skill-bar {
+                height: 12px;
+            }
+            
+            .skill-info {
+                font-size: 0.9rem;
+            }
+            
+            .timeline {
+                margin-top: 20px;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+                margin-bottom: 25px;
+            }
+            
+            .timeline-date {
+                width: 45px;
+                height: 45px;
+                font-size: 0.75rem;
+            }
+            
+            .contact-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.5rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-links .glass-btn {
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .skills-container {
+                gap: 15px;
+            }
+            
+            .skill-category {
+                padding: 15px;
+            }
+            
+            .skill-item {
+                margin-bottom: 20px;
+            }
+            
+            .project-card {
+                width: 240px;
+                height: 320px;
+            }
+            
+            .project-image {
+                height: 120px;
+            }
+            
+            .project-card h4 {
+                font-size: 1.1rem;
+            }
+            
+            .project-card p {
+                font-size: 0.85rem;
+            }
+            
+            .contact-item {
+                max-width: 100%;
+            }
+            
+            @keyframes scroll-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-240px * 5 - 20px * 5)); }
+            }
+        }
+        
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1rem;
+            }
+            
+            .profile-photo-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .nav-link {
+                padding: 4px 8px;
+                font-size: 0.75rem;
+            }
+            
+            .project-card {
+                width: 220px;
+                height: 300px;
+            }
+            
+            .project-image {
+                height: 100px;
+            }
+            
+            .glass-btn {
+                min-width: 100px;
+                height: 45px;
+                font-size: 12px;
+                padding: 0 10px;
+            }
+            
+            .stats-container .glass-btn {
+                width: 180px;
             }
         }
     </style>
@@ -962,7 +1182,7 @@
                 <!-- 3D Profile Photo -->
                 <div class="profile-photo-container">
                     <div class="profile-photo">
-                        <img src="images/jagdishmaliwad.jpeg" alt="Jagdish Maliwad">
+                        <img src="images/jagdishmaliwad.jpeg" alt="Jagdish Maliwad" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
                     </div>
                     <div class="photo-shadow"></div>
                 </div>
@@ -1639,7 +1859,7 @@
                     </div>
                     <h4>Email</h4>
                     <p>jagdish7001@yahoo.com</p>
-                    <a href="mailto:jagdish@example.com" class="glass-btn glass-btn-primary" style="margin-top: 10px;">
+                    <a href="mailto:jagdish7001@yahoo.com" class="glass-btn glass-btn-primary" style="margin-top: 10px;">
                         <span>Send Email</span>
                     </a>
                 </div>
@@ -1650,7 +1870,7 @@
                     </div>
                     <h4>Website</h4>
                     <p>www.jagdishmaliwad.com</p>
-                    <a href="https://www.jagdish.com" class="glass-btn glass-btn-secondary" style="margin-top: 10px;" target="_blank">
+                    <a href="https://www.jagdishmaliwad.com" class="glass-btn glass-btn-secondary" style="margin-top: 10px;" target="_blank">
                         <span>Visit Site</span>
                     </a>
                 </div>
@@ -1689,8 +1909,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Remove header buttons functionality - already removed from HTML
-            
             // Add click sound effect to all glass buttons
             const glassButtons = document.querySelectorAll('.glass-btn');
             glassButtons.forEach(button => {
@@ -1815,7 +2033,9 @@
                     
                     // Calculate animation duration based on number of projects
                     const projectCount = track.querySelectorAll('.project-card').length / 2;
-                    const totalWidth = (300 * projectCount) + (20 * (projectCount - 1));
+                    const projectWidth = 300; // Default project width
+                    const gap = 20;
+                    const totalWidth = (projectWidth * projectCount) + (gap * (projectCount - 1));
                     
                     // Create dynamic animation
                     const animationName = `scroll-${Math.random().toString(36).substr(2, 9)}`;
@@ -1847,11 +2067,15 @@
                 });
             });
             
-            // Initialize skill bars animation
+            // Initialize skill bars animation - Ensure they are visible
             const skillBars = document.querySelectorAll('.skill-progress');
             skillBars.forEach(bar => {
-                // Already set in HTML with inline styles
                 bar.style.transition = 'width 1.5s ease-in-out';
+                // Ensure width is set
+                const computedWidth = bar.style.width;
+                if (!computedWidth || computedWidth === '0px' || computedWidth === '0%') {
+                    bar.style.width = bar.getAttribute('data-width') || '50%';
+                }
             });
             
             // Animate skill bars when they come into view
@@ -1860,12 +2084,14 @@
                     if(entry.isIntersecting) {
                         const skillBars = entry.target.querySelectorAll('.skill-progress');
                         skillBars.forEach(bar => {
-                            // Trigger reflow to restart animation
+                            // Store original width
+                            const originalWidth = bar.style.width;
+                            // Reset to 0 for animation
                             bar.style.width = '0%';
+                            // Animate to original width
                             setTimeout(() => {
-                                const width = bar.style.width || getComputedStyle(bar).width;
-                                bar.style.width = width;
-                            }, 10);
+                                bar.style.width = originalWidth;
+                            }, 100);
                         });
                     }
                 });
@@ -1874,6 +2100,67 @@
             const skillsSection = document.getElementById('skills');
             if(skillsSection) {
                 observer.observe(skillsSection);
+            }
+            
+            // Responsive adjustments
+            function handleResize() {
+                // Adjust project card animation based on screen width
+                const projectCards = document.querySelectorAll('.project-card');
+                const projectWidth = window.innerWidth < 480 ? 240 : 
+                                   window.innerWidth < 768 ? 260 : 
+                                   window.innerWidth < 992 ? 280 : 300;
+                
+                projectCards.forEach(card => {
+                    card.style.width = projectWidth + 'px';
+                });
+                
+                // Update animation keyframes for current project width
+                const projectTracks = document.querySelectorAll('.projects-track');
+                projectTracks.forEach(track => {
+                    const projectCount = track.querySelectorAll('.project-card').length / 2;
+                    const gap = 20;
+                    const totalWidth = (projectWidth * projectCount) + (gap * (projectCount - 1));
+                    
+                    // Update existing animation
+                    const currentAnimation = track.style.animationName;
+                    if (currentAnimation) {
+                        const styleSheet = document.styleSheets[0];
+                        const rules = styleSheet.cssRules || styleSheet.rules;
+                        for (let rule of rules) {
+                            if (rule.name === currentAnimation) {
+                                styleSheet.deleteRule(rule);
+                                break;
+                            }
+                        }
+                    }
+                    
+                    const animationName = `scroll-responsive-${Math.random().toString(36).substr(2, 9)}`;
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes ${animationName} {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-${totalWidth}px); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    const currentDuration = parseFloat(track.style.animationDuration) || 40;
+                    track.style.animation = `${animationName} ${currentDuration}s linear infinite`;
+                });
+            }
+            
+            // Initial call
+            handleResize();
+            
+            // Listen for resize events
+            window.addEventListener('resize', handleResize);
+            
+            // Fallback for profile image
+            const profileImg = document.querySelector('.profile-photo img');
+            if (profileImg) {
+                profileImg.onerror = function() {
+                    this.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+                };
             }
         });
     </script>
